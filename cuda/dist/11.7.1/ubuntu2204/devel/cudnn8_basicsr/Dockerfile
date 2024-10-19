@@ -32,7 +32,19 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 #############################################
-WORKDIR /app
+
+ARG USER_ID
+ARG GROUP_ID
+
+# USER_IDとGROUP_IDが渡されなかった場合にエラーを出す
+RUN if [ -z "${USER_ID}" ] || [ -z "${GROUP_ID}" ]; then \
+        echo "Error: USER_ID and GROUP_ID must be provided"; \
+        exit 1; \
+    fi
+
+# 受け取ったUSER_IDとGROUP_IDでユーザーとグループを作成
+RUN groupadd -g ${GROUP_ID} ru && \
+    useradd -u ${USER_ID} -g ru -m -s /bin/bash ru
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -74,13 +86,8 @@ COPY ./BasicSR /Basicsr
 WORKDIR /Basicsr
 RUN pip install -e .
 
-WORKDIR /app
+WORKDIR /home/ru
 
-ARG USER_ID=1002
-ARG GROUP_ID=1002
-RUN groupadd -g ${GROUP_ID} itoru && \
-    useradd -u ${USER_ID} -g itoru -m -s /bin/bash itoru
-
-USER itoru
+USER ru
 
 CMD ["/bin/bash"]

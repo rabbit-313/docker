@@ -4,9 +4,9 @@
 declare -A IMAGE_NAMES=(
     ["stylegan"]="nvidia/cuda:9.0-cudnn8-devel-ubuntu16.04"
     ["cyclegan"]="nvidia/cuda:10.2-cudnn8-devel-ubuntu18.04"
-    ["basicsr"]="rabbit313/nvidia-cuda:basicsr"
+    ["basicsr"]="rabbit313/cuda:11.7.1-cudnn8-devel-ubuntu22.04.basicsr"
     ["vae"]="nvidia/cuda:11.7.1-cudnn8-devel-ubuntu22.04.vae"
-    ["hat"]="nvidia/cuda:11.7.1-cudnn8-devel-ubuntu22.04.hat"
+    ["hat"]="rabbit313/cuda:11.7.1-cudnn8-devel-ubuntu22.04.hat"
 )
 
 # Dockerコンテナを実行するための関数
@@ -17,9 +17,8 @@ run_docker_container() {
     docker run -it \
            --rm \
            --gpus all \
-           --user itoru:itoru \
            --shm-size=64g \
-           --volume ~/workspace:/app \
+           --volume ~/workspace:/home/ru\
            "${image_name}" \
            /bin/bash
 }
