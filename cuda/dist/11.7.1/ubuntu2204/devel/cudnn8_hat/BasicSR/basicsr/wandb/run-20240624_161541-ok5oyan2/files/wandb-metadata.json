@@ -1,0 +1,123 @@
+{
+    "os": "Linux-5.15.0-78-generic-x86_64-with-glibc2.35",
+    "python": "3.10.12",
+    "heartbeatAt": "2024-06-24T07:15:42.670613",
+    "startedAt": "2024-06-24T07:15:41.689399",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "-opt",
+        "/home/itoru/workspace/SR/BasicSR/options/train/ESRGAN/train_ESRGAN_x4.yml"
+    ],
+    "state": "running",
+    "program": "/data/ito/workspace/SR/BasicSR/basicsr/train.py",
+    "codePathLocal": "train.py",
+    "codePath": "basicsr/train.py",
+    "git": {
+        "remote": "https://github.com/rabbit0624/BasicSR-1.git",
+        "commit": "961a70a92727ca83e423a684d71e8ecda2203550"
+    },
+    "email": null,
+    "root": "/data/ito/workspace/SR/BasicSR",
+    "host": "s76",
+    "username": "itoru",
+    "executable": "/data/ito/workspace/sr_env/bin/python",
+    "cpu_count": 16,
+    "cpu_count_logical": 16,
+    "cpu_freq": {
+        "current": 1614.8391875,
+        "min": 1500.0,
+        "max": 2800.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 1500.0,
+            "min": 1500.0,
+            "max": 2800.0
+        },
+        {
+            "current": 1500.0,
+            "min": 1500.0,
+            "max": 2800.0
+        },
+        {
+            "current": 1500.0,
+            "min": 1500.0,
+            "max": 2800.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2800.0
+        },
+        {
+            "current": 1486.323,
+            "min": 1500.0,
+            "max": 2800.0
+        },
+        {
+            "current": 1500.0,
+            "min": 1500.0,
+            "max": 2800.0
+        },
+        {
+            "current": 1500.0,
+            "min": 1500.0,
+            "max": 2800.0
+        },
+        {
+            "current": 1500.0,
+            "min": 1500.0,
+            "max": 2800.0
+        },
+        {
+            "current": 1500.0,
+            "min": 1500.0,
+            "max": 2800.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2800.0
+        },
+        {
+            "current": 1500.0,
+            "min": 1500.0,
+            "max": 2800.0
+        },
+        {
+            "current": 1500.0,
+            "min": 1500.0,
+            "max": 2800.0
+        },
+        {
+            "current": 1500.0,
+            "min": 1500.0,
+            "max": 2800.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2800.0
+        },
+        {
+            "current": 1500.0,
+            "min": 1500.0,
+            "max": 2800.0
+        },
+        {
+            "current": 1500.0,
+            "min": 1500.0,
+            "max": 2800.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 893.3145751953125,
+            "used": 86.23591232299805
+        }
+    },
+    "memory": {
+        "total": 503.5641403198242
+    }
+}

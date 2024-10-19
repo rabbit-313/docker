@@ -1,0 +1,135 @@
+{
+    "os": "Linux-5.15.0-112-generic-x86_64-with-glibc2.35",
+    "python": "3.10.12",
+    "heartbeatAt": "2024-06-24T07:41:37.076219",
+    "startedAt": "2024-06-24T07:41:35.988465",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "-opt",
+        "/home/itoru/workspace/SR/BasicSR/options/train/ESRGAN/train_ESRGAN_x4.yml"
+    ],
+    "state": "running",
+    "program": "/data/ito/workspace/SR/BasicSR/basicsr/train.py",
+    "codePathLocal": "train.py",
+    "codePath": "basicsr/train.py",
+    "git": {
+        "remote": "https://github.com/rabbit0624/BasicSR-1.git",
+        "commit": "961a70a92727ca83e423a684d71e8ecda2203550"
+    },
+    "email": null,
+    "root": "/data/ito/workspace/SR/BasicSR",
+    "host": "s76",
+    "username": "itoru",
+    "executable": "/data/ito/workspace/sr_env/bin/python",
+    "cpu_count": 16,
+    "cpu_count_logical": 16,
+    "cpu_freq": {
+        "current": 2147.8175,
+        "min": 1500.0,
+        "max": 2800.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 1500.0,
+            "min": 1500.0,
+            "max": 2800.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2800.0
+        },
+        {
+            "current": 2800.0,
+            "min": 1500.0,
+            "max": 2800.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2800.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2800.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2800.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2800.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2800.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2800.0
+        },
+        {
+            "current": 3199.773,
+            "min": 1500.0,
+            "max": 2800.0
+        },
+        {
+            "current": 2800.0,
+            "min": 1500.0,
+            "max": 2800.0
+        },
+        {
+            "current": 1500.0,
+            "min": 1500.0,
+            "max": 2800.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2800.0
+        },
+        {
+            "current": 1500.0,
+            "min": 1500.0,
+            "max": 2800.0
+        },
+        {
+            "current": 3185.582,
+            "min": 1500.0,
+            "max": 2800.0
+        },
+        {
+            "current": 2000.0,
+            "min": 1500.0,
+            "max": 2800.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 893.3145751953125,
+            "used": 85.96185302734375
+        }
+    },
+    "gpu": "NVIDIA RTX A6000",
+    "gpu_count": 2,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA RTX A6000",
+            "memory_total": 51527024640
+        },
+        {
+            "name": "NVIDIA RTX A6000",
+            "memory_total": 51527024640
+        }
+    ],
+    "memory": {
+        "total": 503.56385803222656
+    }
+}

@@ -1,0 +1,1 @@
+python train.py -opt /home/ru/ドキュメント/study/SR/BasicSR/options/train/ESRGAN/finetune_ESRGAN.yml

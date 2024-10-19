@@ -1,0 +1,169 @@
+wandb_version: 1
+
+name:
+  desc: null
+  value: EDSR_finetune_vqvae_ep8
+model_type:
+  desc: null
+  value: SRModel
+scale:
+  desc: null
+  value: 4
+num_gpu:
+  desc: null
+  value: 2
+manual_seed:
+  desc: null
+  value: 10
+datasets:
+  desc: null
+  value:
+    train:
+      name: DF2K-CycleGAN
+      type: PairedImageDataset
+      dataroot_gt: ../../Data/Flickr_DIV2K
+      dataroot_lq: ../../../Generation/pytorch-vqvae/reconstruction/DF2K/model_8
+      filename_tmpl: '{}'
+      io_backend:
+        type: disk
+      gt_size: 192
+      use_hflip: true
+      use_rot: true
+      num_worker_per_gpu: 6
+      batch_size_per_gpu: 16
+      dataset_enlarge_ratio: 1
+      prefetch_mode: null
+      phase: train
+      scale: 4
+    val_1:
+      name: DIV2K_difficult
+      type: PairedImageDataset
+      dataroot_gt: ../../Data/DIV2K/DIV2K_valid_HR/original
+      dataroot_lq: ../../Data/DIV2K/DIV2K_valid_LR_difficult/original
+      io_backend:
+        type: disk
+      phase: val
+      scale: 4
+network_g:
+  desc: null
+  value:
+    type: EDSR
+    num_in_ch: 3
+    num_out_ch: 3
+    num_feat: 256
+    num_block: 32
+    upscale: 4
+    res_scale: 0.1
+    img_range: 255.0
+    rgb_mean:
+    - 0.4488
+    - 0.4371
+    - 0.404
+path:
+  desc: null
+  value:
+    pretrain_network_g: ../experiments/pretrained_models/EDSR_Lx4_f256b32_DIV2K_official-76ee1c8f.pth
+    strict_load_g: true
+    resume_state: null
+    experiments_root: /app/SR/BasicSR/experiments/EDSR_finetune_vqvae_ep8
+    models: /app/SR/BasicSR/experiments/EDSR_finetune_vqvae_ep8/models
+    training_states: /app/SR/BasicSR/experiments/EDSR_finetune_vqvae_ep8/training_states
+    log: /app/SR/BasicSR/experiments/EDSR_finetune_vqvae_ep8
+    visualization: /app/SR/BasicSR/experiments/EDSR_finetune_vqvae_ep8/visualization
+train:
+  desc: null
+  value:
+    ema_decay: 0.999
+    optim_g:
+      type: Adam
+      lr: 0.0001
+      weight_decay: 0
+      betas:
+      - 0.9
+      - 0.99
+    scheduler:
+      type: MultiStepLR
+      milestones:
+      - 200000
+      gamma: 0.5
+    total_iter: 200000
+    warmup_iter: -1
+    pixel_opt:
+      type: L1Loss
+      loss_weight: 1.0
+      reduction: mean
+val:
+  desc: null
+  value:
+    val_freq: 5000.0
+    save_img: false
+    metrics:
+      psnr:
+        type: calculate_psnr
+        crop_border: 4
+        test_y_channel: false
+      ssim:
+        type: calculate_ssim
+        crop_border: 4
+        test_y_channel: false
+logger:
+  desc: null
+  value:
+    print_freq: 100
+    save_checkpoint_freq: 5000.0
+    use_tb_logger: true
+    wandb:
+      project: EDSR_finetune
+      resume_id: null
+dist_params:
+  desc: null
+  value:
+    backend: nccl
+    port: 29500
+dist:
+  desc: null
+  value: false
+rank:
+  desc: null
+  value: 0
+world_size:
+  desc: null
+  value: 1
+auto_resume:
+  desc: null
+  value: false
+is_train:
+  desc: null
+  value: true
+root_path:
+  desc: null
+  value: /app/SR/BasicSR
+_wandb:
+  desc: null
+  value:
+    python_version: 3.9.19
+    cli_version: 0.17.7
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1723954576
+    t:
+      1:
+      - 1
+      - 41
+      - 55
+      2:
+      - 1
+      - 41
+      - 55
+      3:
+      - 13
+      - 14
+      - 16
+      - 23
+      - 35
+      4: 3.9.19
+      5: 0.17.7
+      8:
+      - 5
+      13: linux-x86_64

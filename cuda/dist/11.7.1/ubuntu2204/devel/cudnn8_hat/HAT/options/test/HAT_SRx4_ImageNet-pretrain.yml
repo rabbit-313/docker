@@ -1,0 +1,259 @@
+name: HAT_SRx4_ImageNet-pretrain
+model_type: HATModel
+scale: 4
+num_gpu: 1 # set num_gpu: 0 for cpu mode
+manual_seed: 0
+
+datasets:
+  # test_9:
+  #   name: portrait_off_S-bicubic
+  #   type: PairedImageDataset
+  #   dataroot_gt: ../Data/portrait_off_S/HR
+  #   dataroot_lq: ../Data/portrait_off_S/LR/bicubic
+  #   io_backend:
+  #     type: disk
+
+  # test_10:
+  #   name: portrait_off_S-gaussian_blur
+  #   type: PairedImageDataset
+  #   dataroot_gt: ../Data/portrait_off_S/HR
+  #   dataroot_lq: ../Data/portrait_off_S/LR/gaussian_blur
+  #   io_backend:
+  #     type: disk
+  
+  # test_11:
+  #   name: portrait_off_S-gaussian_noise
+  #   type: PairedImageDataset
+  #   dataroot_gt: ../Data/portrait_off_S/HR
+  #   dataroot_lq: ../Data/portrait_off_S/LR/gaussian_noise
+  #   io_backend:
+  #     type: disk
+
+  # test_12:
+  #   name: portrait_off_S-motion_blurs
+  #   type: PairedImageDataset
+  #   dataroot_gt: ../Data/portrait_off_S/HR
+  #   dataroot_lq: ../Data/portrait_off_S/LR/motion_blur
+  #   io_backend:
+  #     type: disk
+
+  # test_1:  # the 1st test dataset
+  #   name: Set5
+  #   type: PairedImageDataset
+  #   dataroot_gt: ../Data/benchmark/Set5/HR
+  #   dataroot_lq: ../Data/benchmark/Set5/LR_bicubic/X4
+  #   io_backend:
+  #     type: disk
+
+  # test_2:  # the 2nd test dataset
+  #   name: Set14
+  #   type: PairedImageDataset
+  #   dataroot_gt: ../Data/benchmark/Set14/HR
+  #   dataroot_lq: ../Data/benchmark/Set14/LR_bicubic/X4
+  #   io_backend:
+  #     type: disk
+
+  # test_3:
+  #   name: Urban100
+  #   type: PairedImageDataset
+  #   dataroot_gt: ../Data/benchmark/Urban100/HR
+  #   dataroot_lq: ../Data/benchmark/Urban100/LR_bicubic/X4
+  #   io_backend:
+  #     type: disk
+
+  # test_4:
+  #    name: B100
+  #    type: PairedImageDataset
+  #    dataroot_gt: ../Data/benchmark/B100/HR
+  #    dataroot_lq: ../Data/benchmark/B100/LR_bicubic/X4
+  #    io_backend:
+  #      type: disk
+
+  # test_5:
+  #     name: Manga109
+  #     type: PairedImageDataset
+  #     dataroot_gt: ../Data/benchmark/Manga109/HR
+  #     dataroot_lq: ../Data/benchmark/Manga109/LR_bicubic/X4
+  #     io_backend:
+  #       type: disk
+
+  # test_5:
+  #     name: DIV2KC-DefocusBlur
+  #     type: PairedImageDataset
+  #     dataroot_gt: ../Data/DIV2KC/gt
+  #     dataroot_lq: ../Data/DIV2KC/corruptions/DefocusBlur/X4
+  #     io_backend:
+  #       type: disk
+
+  # test_6:
+  #     name: DIV2KC-GaussianBlur
+  #     type: PairedImageDataset
+  #     dataroot_gt: ../Data/DIV2KC/gt
+  #     dataroot_lq: ../Data/DIV2KC/corruptions/GaussianBlur/X4
+  #     io_backend:
+  #       type: disk
+  
+  # test_7:
+  #     name: DIV2KC-GaussianNoise
+  #     type: PairedImageDataset
+  #     dataroot_gt: ../Data/DIV2KC/gt
+  #     dataroot_lq: ../Data/DIV2KC/corruptions/GaussianNoise/X4
+  #     io_backend:
+  #       type: disk
+  
+  # test_8:
+  #     name: DIV2KC-GlassBlur
+  #     type: PairedImageDataset
+  #     dataroot_gt: ../Data/DIV2KC/gt
+  #     dataroot_lq: ../Data/DIV2KC/corruptions/GlassBlur/X4
+  #     io_backend:
+  #       type: disk
+  
+  # test_9:
+  #     name: DIV2KC-ImpulseNoise
+  #     type: PairedImageDataset
+  #     dataroot_gt: ../Data/DIV2KC/gt
+  #     dataroot_lq: ../Data/DIV2KC/corruptions/ImpulseNoise/X4
+  #     io_backend:
+  #       type: disk
+
+  # test_10:
+  #     name: DIV2KC-JPEG
+  #     type: PairedImageDataset
+  #     dataroot_gt: ../Data/DIV2KC/gt
+  #     dataroot_lq: ../Data/DIV2KC/corruptions/JPEG/X4
+  #     io_backend:
+  #       type: disk
+
+  # test_11:
+  #     name: DIV2KC-PoissonNoise
+  #     type: PairedImageDataset
+  #     dataroot_gt: ../Data/DIV2KC/gt
+  #     dataroot_lq: ../Data/DIV2KC/corruptions/PoissonNoise/X4
+  #     io_backend:
+  #       type: disk
+
+  # test_12:
+  #     name: DIV2KC-SpeckleNoise
+  #     type: PairedImageDataset
+  #     dataroot_gt: ../Data/DIV2KC/gt
+  #     dataroot_lq: ../Data/DIV2KC/corruptions/SpeckleNoise/X4
+  #     io_backend:
+  #       type: disk
+
+  # test_12:
+  #   name: DIV2K-nonblur
+  #   type: PairedImageDataset
+  #   dataroot_gt: ../Data/DIV2K/DIV2K_valid_HR/original
+  #   dataroot_lq: ../Data/DIV2K/DIV2K_valid_LR_blurs/non_blur
+  #   io_backend:
+  #     type: disk
+
+  # test_13:
+  #   name: DIV2K-blur1
+  #   type: PairedImageDataset
+  #   dataroot_gt: ../Data/DIV2K/DIV2K_valid_HR/original
+  #   dataroot_lq: ../Data/DIV2K/DIV2K_valid_LR_blurs/blur_1
+  #   io_backend:
+  #     type: disk
+  
+  # test_14:
+  #   name: DIV2K-blur3
+  #   type: PairedImageDataset
+  #   dataroot_gt: ../Data/DIV2K/DIV2K_valid_HR/original
+  #   dataroot_lq: ../Data/DIV2K/DIV2K_valid_LR_blurs/blur_3
+  #   io_backend:
+  #     type: disk
+
+  # test_15:
+  #   name: DIV2K-blur5
+  #   type: PairedImageDataset
+  #   dataroot_gt: ../Data/DIV2K/DIV2K_valid_HR/original
+  #   dataroot_lq: ../Data/DIV2K/DIV2K_valid_LR_blurs/blur_5
+  #   io_backend:
+  #     type: disk
+  
+  # test_16:
+  #   name: DIV2K-blur7
+  #   type: PairedImageDataset
+  #   dataroot_gt: ../Data/DIV2K/DIV2K_valid_HR/original
+  #   dataroot_lq: ../Data/DIV2K/DIV2K_valid_LR_blurs/blur_7
+  #   io_backend:
+  #     type: disk
+  
+  # test_17:
+  #   name: DIV2K-blur9
+  #   type: PairedImageDataset
+  #   dataroot_gt: ../Data/DIV2K/DIV2K_valid_HR/original
+  #   dataroot_lq: ../Data/DIV2K/DIV2K_valid_LR_blurs/blur_9
+  #   io_backend:
+  #     type: disk
+  
+  # test_18:
+  #   name: DIV2K-blur11
+  #   type: PairedImageDataset
+  #   dataroot_gt: ../Data/DIV2K/DIV2K_valid_HR/original
+  #   dataroot_lq: ../Data/DIV2K/DIV2K_valid_LR_blurs/blur_11
+  #   io_backend:
+  #     type: disk
+
+  test_19:
+    name: portrait_off_bicubic
+    type: PairedImageDataset
+    dataroot_gt: ../Data/portrait_onoff/off
+    dataroot_lq: ../Data/portrait_onoff/off_downsampled
+    io_backend:
+      type: disk
+  
+  test_20:
+    name: portrait_on_bicubic
+    type: PairedImageDataset
+    dataroot_gt: ../Data/portrait_onoff/on
+    dataroot_lq: ../Data/portrait_onoff/on_downsampled
+    io_backend:
+      type: disk
+      
+
+
+# network structures
+network_g:
+  type: HAT
+  upscale: 4
+  in_chans: 3
+  img_size: 64
+  window_size: 16
+  compress_ratio: 3
+  squeeze_factor: 30
+  conv_scale: 0.01
+  overlap_ratio: 0.5
+  img_range: 1.
+  depths: [6, 6, 6, 6, 6, 6]
+  embed_dim: 180
+  num_heads: [6, 6, 6, 6, 6, 6]
+  mlp_ratio: 2
+  upsampler: "pixelshuffle"
+  resi_connection: "1conv"
+
+# path
+path:
+  pretrain_network_g: ./experiments/pretrained_models/HAT_SRx4_ImageNet-pretrain.pth
+  strict_load_g: true
+  param_key_g: "params_ema"
+
+# validation settings
+val:
+  save_img: true
+  suffix: ~ # add suffix to saved images, if None, use exp name
+
+  metrics:
+    psnr: # metric name, can be arbitrary
+      type: calculate_psnr
+      crop_border: 4
+      test_y_channel: true
+    ssim:
+      type: calculate_ssim
+      crop_border: 4
+      test_y_channel: true
+    lpips: # metric name, can be arbitrary
+      type: calculate_lpips
+      crop_border: 4

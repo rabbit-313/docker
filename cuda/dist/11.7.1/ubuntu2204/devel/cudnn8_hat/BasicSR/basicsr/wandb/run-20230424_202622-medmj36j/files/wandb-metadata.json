@@ -1,0 +1,149 @@
+{
+    "os": "Linux-5.15.0-43-generic-x86_64-with-glibc2.35",
+    "python": "3.9.13",
+    "heartbeatAt": "2023-04-24T11:26:23.074858",
+    "startedAt": "2023-04-24T11:26:22.197408",
+    "docker": null,
+    "cuda": "10.0.130",
+    "args": [
+        "-opt",
+        "/home/ru/\u30c9\u30ad\u30e5\u30e1\u30f3\u30c8/study/SR/BasicSR/options/train/ESRGAN/train_RRDBNet_PSNR_x4.yml",
+        "--auto_resume"
+    ],
+    "state": "running",
+    "program": "/home/ru/\u30c9\u30ad\u30e5\u30e1\u30f3\u30c8/study/SR/BasicSR/basicsr/train.py",
+    "codePath": "basicsr/train.py",
+    "git": {
+        "remote": "https://github.com/XPixelGroup/BasicSR.git",
+        "commit": "033cd6896d898fdd3dcda32e3102a792efa1b8f4"
+    },
+    "email": "itoru03@gmail.com",
+    "root": "/home/ru/\u30c9\u30ad\u30e5\u30e1\u30f3\u30c8/study/SR/BasicSR",
+    "host": "klab39",
+    "username": "ru",
+    "executable": "/home/ru/anaconda3/bin/python",
+    "cpu_count": 12,
+    "cpu_count_logical": 20,
+    "cpu_freq": {
+        "current": 2.0136000000000007,
+        "min": 800.0,
+        "max": 3700.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2.1,
+            "min": 800.0,
+            "max": 3700.0
+        },
+        {
+            "current": 2.1,
+            "min": 800.0,
+            "max": 3700.0
+        },
+        {
+            "current": 2.1,
+            "min": 800.0,
+            "max": 3700.0
+        },
+        {
+            "current": 2.1,
+            "min": 800.0,
+            "max": 3700.0
+        },
+        {
+            "current": 2.1,
+            "min": 800.0,
+            "max": 3700.0
+        },
+        {
+            "current": 2.1,
+            "min": 800.0,
+            "max": 3700.0
+        },
+        {
+            "current": 2.1,
+            "min": 800.0,
+            "max": 3700.0
+        },
+        {
+            "current": 2.1,
+            "min": 800.0,
+            "max": 3700.0
+        },
+        {
+            "current": 2.1,
+            "min": 800.0,
+            "max": 3800.0
+        },
+        {
+            "current": 2.1,
+            "min": 800.0,
+            "max": 3800.0
+        },
+        {
+            "current": 1.1,
+            "min": 800.0,
+            "max": 3800.0
+        },
+        {
+            "current": 2.1,
+            "min": 800.0,
+            "max": 3800.0
+        },
+        {
+            "current": 2.1,
+            "min": 800.0,
+            "max": 3700.0
+        },
+        {
+            "current": 2.1,
+            "min": 800.0,
+            "max": 3700.0
+        },
+        {
+            "current": 2.1,
+            "min": 800.0,
+            "max": 3700.0
+        },
+        {
+            "current": 2.1,
+            "min": 800.0,
+            "max": 3700.0
+        },
+        {
+            "current": 2.1,
+            "min": 800.0,
+            "max": 3600.0
+        },
+        {
+            "current": 2.1,
+            "min": 800.0,
+            "max": 3600.0
+        },
+        {
+            "current": 2.1,
+            "min": 800.0,
+            "max": 3600.0
+        },
+        {
+            "current": 2.1,
+            "min": 800.0,
+            "max": 3600.0
+        }
+    ],
+    "disk": {
+        "total": 1832.2072448730469,
+        "used": 732.9016532897949
+    },
+    "gpu": "NVIDIA TITAN RTX",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA TITAN RTX",
+            "memory_total": 25769803776
+        }
+    ],
+    "memory": {
+        "total": 62.55241775512695
+    }
+}

@@ -1,0 +1,1 @@
+python test.py -opt /home/ito/workspace/SR/BasicSR/options/test/ESRGAN/test_RRDBNet_PSNR_x4.yml

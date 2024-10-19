@@ -1,0 +1,1 @@
+python train.py -opt /home/ru/ドキュメント/study/SR/BasicSR/options/train/ESRGAN/train_RRDBNet_PSNR_x4.yml

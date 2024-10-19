@@ -1,0 +1,1 @@
+{"global_step": 35000, "_timestamp": 1721038264.7441082, "losses/l_pix": 0.07204154133796692, "_runtime": 12556.313267230988, "_step": 349, "metrics/DIV2K_difficult/psnr": 18.028980255126953, "metrics/DIV2K_difficult/ssim": 0.47177210450172424, "_wandb": {"runtime": 12556}}

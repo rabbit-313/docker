@@ -1,0 +1,71 @@
+name: ESRGAN_SRx4_DF2KOST_official
+model_type: ESRGANModel
+scale: 4
+num_gpu: 1  # set num_gpu: 0 for cpu mode
+manual_seed: 0
+
+datasets:
+  test_9:
+    name: portrait_S-bicubic
+    type: PairedImageDataset
+    dataroot_gt: ../Data/portrait_S/HR
+    dataroot_lq: ../Data/portrait_S/LR/bicubic
+    io_backend:
+      type: disk
+
+  test_10:
+    name: portrait_S-gaussian_blur
+    type: PairedImageDataset
+    dataroot_gt: ../Data/portrait_S/HR
+    dataroot_lq: ../Data/portrait_S/LR/gaussian_blur
+    io_backend:
+      type: disk
+  
+  test_11:
+    name: portrait_S-gaussian_noise
+    type: PairedImageDataset
+    dataroot_gt: ../Data/portrait_S/HR
+    dataroot_lq: ../Data/portrait_S/LR/gaussian_noise
+    io_backend:
+      type: disk
+
+  test_12:
+    name: portrait_S-motion_blurs
+    type: PairedImageDataset
+    dataroot_gt: ../Data/portrait_S/HR
+    dataroot_lq: ../Data/portrait_S/LR/motion_blur
+    io_backend:
+      type: disk
+
+# network structures
+network_g:
+  type: RRDBNet
+  num_in_ch: 3
+  num_out_ch: 3
+  num_feat: 64
+  num_block: 23
+  num_grow_ch: 32
+
+# path
+path:
+  pretrain_network_g: experiments/pretrained_models/ESRGAN_SRx4_DF2KOST_official-ff704c30.pth
+  strict_load_g: true
+  param_key_g: "params_ema"
+
+# validation settings
+val:
+  save_img: true
+  suffix: ~  # add suffix to saved images, if None, use exp name
+
+  metrics:
+    psnr: # metric name, can be arbitrary
+      type: calculate_psnr
+      crop_border: 4
+      test_y_channel: false
+    ssim:
+      type: calculate_ssim
+      crop_border: 4
+      test_y_channel: false
+    lpips: # metric name, can be arbitrary
+      type: calculate_lpips
+      crop_border: 4
