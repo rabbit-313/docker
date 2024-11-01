@@ -1,14 +1,14 @@
 ARG IMAGE_NAME
-FROM ${IMAGE_NAME}:10.2-devel-ubuntu18.04 as base
+FROM ${IMAGE_NAME}:9.2-devel-ubuntu18.04 as base
 
 FROM base as base-amd64
 
-ENV NV_CUDNN_PACKAGE_VERSION 8.6.0.163-1
-ENV NV_CUDNN_VERSION 8.6.0.163
+ENV NV_CUDNN_PACKAGE_VERSION 7.6.5.32-1
+ENV NV_CUDNN_VERSION 7.6.5.32
 
-ENV NV_CUDNN_PACKAGE_NAME libcudnn8
-ENV NV_CUDNN_PACKAGE ${NV_CUDNN_PACKAGE_NAME}=${NV_CUDNN_PACKAGE_VERSION}+cuda10.2
-ENV NV_CUDNN_PACKAGE_DEV ${NV_CUDNN_PACKAGE_NAME}-dev=${NV_CUDNN_PACKAGE_VERSION}+cuda10.2
+ENV NV_CUDNN_PACKAGE_NAME libcudnn7
+ENV NV_CUDNN_PACKAGE ${NV_CUDNN_PACKAGE_NAME}=${NV_CUDNN_PACKAGE_VERSION}+cuda9.2
+ENV NV_CUDNN_PACKAGE_DEV ${NV_CUDNN_PACKAGE_NAME}-dev=${NV_CUDNN_PACKAGE_VERSION}+cuda9.2
 
 FROM base-${TARGETARCH}
 
@@ -27,7 +27,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     rm -rf /var/lib/apt/lists/*
 
 
-################ カスタム部分 ################
+###############################################################
 ARG USER_ID
 ARG GROUP_ID
 

@@ -7,6 +7,12 @@ declare -A IMAGE_NAMES=(
     ["basicsr"]="rabbit313/cuda:11.7.1-cudnn8-devel-ubuntu22.04.basicsr"
     ["vae"]="nvidia/cuda:11.7.1-cudnn8-devel-ubuntu22.04.vae"
     ["hat"]="rabbit313/cuda:11.7.1-cudnn8-devel-ubuntu22.04.hat"
+    ["mae"]="rabbit313/cuda:11.7.1-cudnn8-devel-ubuntu22.04-pytorch2.0.1.mae"
+    ["vaegan"]="rabbit313/cuda:9-cudnn7-devel-pytorch0.4.1.vaegan"
+    ["ddpm"]="rabbit313/cuda:11.7.1-cudnn8-devel-ubuntu22.04-pytorch2.0.1.ddpm"
+    ["ddim"]="rabbit313/cuda:10.1-cudnn7-devel-pytorch1.6.1.ddim"
+    ["ddimv2"]="rabbit313/cuda:11.6-cudnn8-devel-pytorch1.13.1.ddimv2"
+
 )
 
 # Dockerコンテナを実行するための関数
@@ -24,7 +30,7 @@ run_docker_container() {
 }
 
 # 使用するイメージを選択する
-echo "使用するDockerイメージを選択してください: stylegan, cyclegan, basicsr, vae, hat"
+echo "使用するDockerイメージを選択してください: stylegan, cyclegan, basicsr, vae, hat, mae, vaegan, ddpm, ddim, ddimv2"
 read -p "選択: " selected_image
 
 # 選択されたイメージ名に対応する値を取得し、関数に渡す
